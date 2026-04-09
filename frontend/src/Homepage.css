@@ -1,0 +1,13 @@
+.cards{
+    border: 2px solid red;
+    display: flex;
+    gap: 20px;
+    padding: 20px
+}
+
+.card{
+    border: 1px solid green;
+    border-radius: 10px;
+    height: 150px
+
+}
