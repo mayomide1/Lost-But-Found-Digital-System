@@ -1,0 +1,51 @@
+.signup{
+display: flex;
+}
+
+.left, 
+.right{
+/* border: 2px solid red; */
+width: 50%;
+height: 100vh;
+}
+
+.signup .left img{
+    width: 100%;
+    height: 100vh;
+}
+
+.signup .right .signup-form{
+    border: 1px solid black;
+    box-shadow: 4px 4px 4px 4px gray;
+    border-radius: 10px;
+    width: 70%;
+    margin: 100px auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup .right .signup-form p {
+    font-weight: 600;
+    margin: 10px 0 5px;
+    width: 300px;
+}
+
+.signup .right .signup-form input{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.signup .right .signup-form input::placeholder{
+    padding: 10px;
+}
+
+.signup .right .signup-form button{
+    width: 100%;
+    margin: 20px auto ;
+    height: 30px;
+    border-radius: 50px;
+}
