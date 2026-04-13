@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Homepage.css"
+import {Link} from "react-router-dom"
 
 const Homepage = () => {
 
@@ -35,8 +36,8 @@ const Homepage = () => {
     <div>
       <nav id='Navbar'>
         <div className='buttons'>
-        <button>Sign Up</button>
-        <button>Sign In</button>
+            <Link to="/signup"><button>Sign Up</button></Link>
+            <Link to="/login"><button>Sign In</button></Link>
         </div>
       </nav>
 
@@ -59,7 +60,6 @@ const Homepage = () => {
 }
 
 const ItemCard = ({itemName, locationSeen, date}) => {
-    console.log("I am rendering");
     return (
         <div>
             <div className='card'>
