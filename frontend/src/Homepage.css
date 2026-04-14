@@ -8,14 +8,16 @@ nav{
     margin-bottom: 50px;
 }
 
+nav .nav-cta,
 nav .buttons{
     display: flex;
     gap: 20px;
     padding: 5px;
 }
 
+nav .nav-cta button,
 nav .buttons button{
-    width: 80px;
+    width: 100px;
     height: 40px;
     border-radius: 10px;
 }
@@ -33,6 +35,11 @@ nav .buttons button{
     width: 80px;
     height: 40px;
     border-radius: 10px;
+}
+
+#cards h1{
+text-align: center;
+margin: 20px 0;
 }
 
 .cards{
@@ -61,12 +68,22 @@ nav .buttons button{
 }
 
 .card .category{
-    text-align: end;
     font-weight: 600;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px
 }
 
-.card .item-name{
-    padding: 0 20px;
+.card .date-location{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card .date-location p{
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .card .cta-button{
@@ -79,3 +96,44 @@ nav .buttons button{
     height: 50px;
     border-radius: 10px;
 }
+
+.how-it-works{
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.how-it-works h1{
+    text-align: center;
+}
+
+.how-it-works .cards{
+    display: flex;
+}
+
+.how-it-works .cards .card{
+    border: 2px solid green;
+    width: 300px;
+    height: 100px;
+}
+
+.how-it-works .cards .card h2{
+    text-align: center;
+}
+
+footer{
+    border: 2px solid red;
+    margin: 30px 0 0 ;
+    display: flex;
+    align-items: center;
+    padding: 10px ;
+    justify-content: space-between;
+}
+
+footer div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
