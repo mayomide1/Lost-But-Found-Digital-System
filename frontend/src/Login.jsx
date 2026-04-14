@@ -9,7 +9,6 @@ const Login = () => {
     <div className="login">
       <div className="left">
     <img src={lostButFoundImage} alt="image" />
-    <h1>Welcome <span>Back</span>!</h1>
     </div>
     <div className="right">
     <div className='login-form'>

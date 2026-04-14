@@ -37,15 +37,12 @@ height: 100vh;
     height: 40px;
     margin-bottom: 10px;
     border-radius: 8px;
-}
-
-.signup .right .signup-form input::placeholder{
     padding: 10px;
 }
 
 .signup .right .signup-form button{
     width: 100%;
     margin: 20px auto ;
-    height: 30px;
+    height: 50px;
     border-radius: 50px;
 }

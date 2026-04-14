@@ -58,7 +58,7 @@ const Homepage = () => {
 
   return (
     <div>
-      <nav id='Navbar'>
+      <nav id='navbar'>
         <h1>FINDEE</h1>
         <div className='buttons'>
             <Link to="/signup"><button>Sign Up</button></Link>
@@ -94,17 +94,20 @@ const Homepage = () => {
 
 const ItemCard = ({category,itemName, locationSeen, date, description}) => {
     return (
-        <div>
+        <>
             <div className='card'>
             <img src="" alt="" style={{border:"2px solid red", width:"100%", height:"150px"}}/>
-            <p>{category} 3 days ago</p>
-             <p>{itemName}</p>   
-             <p>Location seen: {locationSeen}</p>   
-             <p>Date: {date}</p>
+            <p className='category'>{category} 3 days ago</p>
+             <p className='item-name'><strong>{itemName}</strong></p>   
+             <p><strong>Location seen: </strong>{locationSeen}</p>   
+             <p><strong>Date: </strong> {date}</p>
              <p>{description}</p>
+             <div className="cta-button">
+                <button>View</button>
+                <button>Claim</button>
+             </div>
             </div>
-
-        </div>
+        </>
     )
 }
 
