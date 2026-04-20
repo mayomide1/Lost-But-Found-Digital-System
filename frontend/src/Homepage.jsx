@@ -49,7 +49,9 @@ const Homepage = () => {
             />
         ))}
         </div>
+        <div className="cta">
       <Link to="/reports"><button>View More</button></Link>
+      </div>
       </section>
 
     <section className='how-it-works'>

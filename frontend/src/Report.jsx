@@ -7,6 +7,34 @@ import { FaRegCopyright } from "react-icons/fa6";
 
    export const items = [
         {
+            itemName:"Laptop Charger",
+            category: "Lost",
+            locationSeen: "Faculty of Science",
+            date: "28/03/2026",
+            description: ""
+        },
+        {
+            itemName:"Phone Charger",
+            category: "Found",
+            locationSeen: "Faculty of Science",
+            date: "28/03/2026",
+            description: ""
+        },
+        {
+            itemName:"Headphone",
+            category: "Lost",
+            locationSeen: "Faculty of Science",
+            date: "28/03/2026",
+            description: "It is a Black laptop bag, It contains contains"
+        },
+        {
+            itemName:"Flash Drive",
+            category: "Found",
+            locationSeen: "Faculty of Science",
+            date: "28/03/2026",
+            description: "It is a Black laptop bag, It contains contains"
+        },
+        {
             itemName:"Black Laptop Bag",
             category: "Lost",
             locationSeen: "Faculty of Science",
@@ -21,7 +49,7 @@ import { FaRegCopyright } from "react-icons/fa6";
             description: "The name on the ID Card is Ayomide Emmanuel Mamukuyomi, Matric Number: 220591184."
         },
         {
-            itemName:"Bag",
+            itemName:"Laptop Bag",
             category: "Lost",
             locationSeen: "Faculty of Science",
             date: "28/03/2026"
@@ -45,8 +73,8 @@ import { FaRegCopyright } from "react-icons/fa6";
             date: "28/03/2026"
         },
         {
-            itemName:"Bag",
-            category: "Found",
+            itemName:"Phone",
+            category: "Lost",
             locationSeen: "Faculty of Science",
             date: "28/03/2026"
         },
@@ -57,8 +85,8 @@ import { FaRegCopyright } from "react-icons/fa6";
             date: "28/03/2026"
         },
         {
-            itemName:"Bag",
-            category: "Found",
+            itemName:"Phone Case",
+            category: "Lost",
             locationSeen: "Faculty of Science",
             date: "28/03/2026"
         },
@@ -69,8 +97,8 @@ import { FaRegCopyright } from "react-icons/fa6";
             date: "28/03/2026"
         },
                 {
-            itemName:"Bag",
-            category: "Found",
+            itemName:"Id Card",
+            category: "Lost",
             locationSeen: "Faculty of Science",
             date: "28/03/2026"
         },
@@ -85,6 +113,8 @@ import { FaRegCopyright } from "react-icons/fa6";
 const Report = () => {
 
     const [filter, setFilter] = useState("All")
+    const [search, setSearch] = useState("")
+    const [error, setError] = useState("")
 
     let filteredItems = [];
     if (filter === "All"){
@@ -95,13 +125,14 @@ const Report = () => {
         filteredItems = items.filter(item => item.category === "Lost")
     }
 
+    filteredItems = filteredItems.filter(item => item.itemName.toLowerCase().includes(search.toLowerCase()))
+
   return (
     <>
     <section id='cards'>
         <h1 className='header'>REPORTS</h1>
         <div className="search">
-        <input type="text" placeholder='Search'/>
-        <button>Search</button>
+        <input type="text" placeholder='Search' onChange={(e) => setSearch(e.target.value)}/>
         </div>
       <div className='filter'>
         <button onClick={() => setFilter ("All")}>All</button>
@@ -110,7 +141,7 @@ const Report = () => {
       </div>
 
       <div className='cards'>
-        {filteredItems.map((item, index) =>(
+       {(filteredItems.length === 0 ) ? <p style={{color: "red"}}>Item Could not be found</p>: filteredItems.map((item, index) =>(
             <ItemCard 
             key = {index}
             category={item.category}

@@ -5,7 +5,10 @@ nav{
     padding: 10px;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
 }
 
 nav .nav-cta,
@@ -23,13 +26,13 @@ nav .buttons button{
 }
 
 section{
-    margin: 50px 0;
+    margin: 30px 0;
     border: 2px solid red;
 }
 
 .hero-section{
     border: 2px solid red;
-    height: 100vh;
+    height: 100%;
     display: flex;
 }
 
@@ -81,10 +84,17 @@ section{
     text-align: center;
 }
 
+.reports .cta{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .reports button{
     width: 150px;
     height: 60px;
-    margin: 0 auto;
+    margin: 20px auto;
+    justify-content: center;
     border-radius: 10px;
 }
 
@@ -113,8 +123,8 @@ section{
 }
 
 footer{
-    border: 2px solid red;
-    margin: 30px 0 0 ;
+    /* border: 2px solid red; */
+    margin: 30px 0 10px;
     display: flex;
     align-items: center;
     padding: 10px ;
