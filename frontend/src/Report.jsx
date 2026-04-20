@@ -4,6 +4,7 @@ import { MdLocationPin } from "react-icons/md";
 import { LuClock4 } from "react-icons/lu";
 import { IoCalendarNumberSharp } from "react-icons/io5";
 import { FaRegCopyright } from "react-icons/fa6";
+import { useEffect } from "react";
 
    export const items = [
         {
@@ -114,7 +115,6 @@ const Report = () => {
 
     const [filter, setFilter] = useState("All")
     const [search, setSearch] = useState("")
-    const [error, setError] = useState("")
 
     let filteredItems = [];
     if (filter === "All"){
@@ -127,6 +127,9 @@ const Report = () => {
 
     filteredItems = filteredItems.filter(item => item.itemName.toLowerCase().includes(search.toLowerCase()))
 
+    useEffect(() => {
+            window.scroll(0,0)
+    },[])
   return (
     <>
     <section id='cards'>

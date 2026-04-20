@@ -20,8 +20,8 @@ nav .buttons{
 
 nav .nav-cta button,
 nav .buttons button{
-    width: 100px;
-    height: 40px;
+    width: 130px;
+    height: 50px;
     border-radius: 10px;
 }
 
@@ -60,9 +60,10 @@ section{
 }
 
 .hero-section .left .buttons button{
-    width: 200px;
-    height: 50px;
+    width: 250px;
+    height: 80px;
     border-radius: 10px;
+    font-size: 1.3rem;
 }
 
 .filter{
