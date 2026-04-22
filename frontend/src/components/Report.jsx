@@ -1,10 +1,11 @@
 import {useState} from 'react'
-import "./Report.css"
+import "../css/Report.css"
 import { MdLocationPin } from "react-icons/md";
 import { LuClock4 } from "react-icons/lu";
 import { IoCalendarNumberSharp } from "react-icons/io5";
 import { FaRegCopyright } from "react-icons/fa6";
 import { useEffect } from "react";
+import NavBar from './NavBar';
 
    export const items = [
         {
@@ -128,10 +129,15 @@ const Report = () => {
     filteredItems = filteredItems.filter(item => item.itemName.toLowerCase().includes(search.toLowerCase()))
 
     useEffect(() => {
-            window.scroll(0,0)
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    })
     },[])
   return (
     <>
+    <NavBar />
     <section id='cards'>
         <h1 className='header'>REPORTS</h1>
         <div className="search">
@@ -144,7 +150,7 @@ const Report = () => {
       </div>
 
       <div className='cards'>
-       {(filteredItems.length === 0 ) ? <p style={{color: "red"}}>Item Could not be found</p>: filteredItems.map((item, index) =>(
+       {(filteredItems.length === 0 ) ? <p style={{color: "red"}}>No item was found</p>: filteredItems.map((item, index) =>(
             <ItemCard 
             key = {index}
             category={item.category}

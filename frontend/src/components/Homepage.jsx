@@ -1,26 +1,13 @@
-import "./Homepage.css"
+import "../css/Homepage.css"
 import {Link} from "react-router-dom"
 import {ItemCard, items} from "./Report"
+import NavBar from "./NavBar"
 
 const Homepage = () => {
 
   return (
     <div>
-      <nav id='navbar'>
-        <h1>Lost & Found</h1>
-
-        <div className='nav-cta'>
-            <button>Home</button>
-            <Link to="/reports"><button>Reports</button></Link>
-            <Link to="/report-lost"><button>Report Lost Item</button></Link>
-            <Link to="/report-found"><button>Report Found Item</button></Link>
-        </div>
-        <div className='buttons'>
-            <Link to="/signup"><button>Sign Up</button></Link>
-            <Link to="/login"><button>Sign In</button></Link>
-        </div>
-      </nav>
-
+    <NavBar/>
       <section className='hero-section' id='hero-section'>
         <div className="left">
         <h1>Lost Something? <br/>Found Something?</h1>
@@ -58,13 +45,16 @@ const Homepage = () => {
         <h1>HOW IT WORKS</h1>
         <div className='cards'>
         <div className='card'>
-            <h2>Report Items lost of found</h2>
+            <h2>1. Report Lost or Found Items</h2>
+            <p>Provide a clear description, location, date, and contact info. Attach a photo if possible. Your report will be searchable by others.</p>
         </div>
         <div className='card'>
-            <h2>We Match</h2>
+            <h2>2. We Find Matches</h2>
+            <p>Our system compares lost and found reports. When a potential match is found, both parties are notified via email.</p>
         </div>
         <div className='card'>
-            <h2>You Claim/Return</h2>
+            <h2>3. Claim or Return Items</h2>
+            <p><strong>To claim: </strong>Verify ownership (receipt, photo, unique details). <br /> <strong>To return:</strong>Use the secure contact form to arrange pickup or shipping.</p>
         </div>
         </div>
     </section>

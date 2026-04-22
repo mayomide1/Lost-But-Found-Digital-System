@@ -1,6 +1,6 @@
 import React from 'react'
-import "./Signup.css"
-import lostButFoundImage from "../assets/lostbutfound.jpeg"
+import "../css/Signup.css"
+import lostButFoundImage from "/assets/lostbutfound.jpeg"
 import {Link} from "react-router-dom"
 
 const Signup = () => {

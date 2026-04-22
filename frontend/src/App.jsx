@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
-import Homepage from './Homepage'
-import Signup from './Signup'
-import Login from './Login'
-import ReportLost from './ReportLost'
-import ReportFound from './ReportFound'
-import Report from './Report'
+import Homepage from './components/Homepage'
+import Signup from './components/Signup'
+import Login from './components/Login'
+import ReportLost from './components/ReportLost'
+import ReportFound from './components/ReportFound'
+import Report from './components/Report'
 
 
 function App() {

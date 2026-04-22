@@ -1,6 +1,6 @@
 import React from 'react'
-import lostButFoundImage from "../assets/lostbutfound.jpeg"
-import "./Login.css"
+import lostButFoundImage from "/assets/lostbutfound.jpeg"
+import "../css/Login.css"
 import {Link} from "react-router-dom"
 
 const Login = () => {
