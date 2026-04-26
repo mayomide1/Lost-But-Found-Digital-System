@@ -41,7 +41,8 @@ const Homepage = () => {
       </div>
       </section>
 
-    <section className='how-it-works'>
+    <section >
+      <div className='how-it-works'>
         <h1>HOW IT WORKS</h1>
         <div className='cards'>
         <div className='card'>
@@ -57,14 +58,15 @@ const Homepage = () => {
             <p><strong>To claim: </strong>Verify ownership (receipt, photo, unique details). <br /> <strong>To return:</strong>Use the secure contact form to arrange pickup or shipping.</p>
         </div>
         </div>
+        </div>
     </section>
 
       <footer>
         <h1>Lost & Found</h1>
         <p>© 2026 Lost & Found Platform. All rights reserved.</p>
         <div>
-       <Link to="/report-lost"><p>Report Lost Item</p></Link>
-        <Link to="/report-found"><p>Report Found Item</p></Link>
+       <Link to="/report-lost"><button>Report Lost Item</button></Link>
+        <Link to="/report-found"><button>Report Found Item</button></Link>
         </div>
 
       </footer>

@@ -5,6 +5,9 @@ import Login from './components/Login'
 import ReportLost from './components/ReportLost'
 import ReportFound from './components/ReportFound'
 import Report from './components/Report'
+import Dashboard from './components/Dashboard'
+import Sidebar from './components/Sidebar'
+
 
 
 function App() {
@@ -18,6 +21,10 @@ function App() {
       <Route path='/reports' element={<Report/>} />
       <Route path='/report-lost' element={<ReportLost/>} />
       <Route path='/report-found' element={<ReportFound/>} />
+      <Route path='/dashboard' element={<Dashboard/>} />
+      <Route path='/sidebar' element={<Sidebar/>} />
+
+
     </Routes>
     </>
   )

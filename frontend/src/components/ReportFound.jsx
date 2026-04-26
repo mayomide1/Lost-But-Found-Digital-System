@@ -1,7 +1,14 @@
-import React from 'react'
+import { useEffect} from 'react'
 import NavBar from './NavBar'
 
 const ReportFound = () => {
+      useEffect(() => {
+      window.scroll({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+      })
+      },[])
   return (
     <>
     <NavBar />
