@@ -1,11 +1,18 @@
 import React from 'react'
 import {Link} from "react-router-dom"
 import "../css/NavBar.css"
+import { useNavigate } from 'react-router-dom'
 
 const NavBar = () => {
 
+  const navigate = useNavigate()
+
     const activeUser = (JSON.parse(localStorage.getItem("loggedUser")))
-    console.log(activeUser)
+    
+    function logout(){
+        localStorage.removeItem("loggedUser")
+        navigate("/")
+    }
 
   return (
     <>
@@ -17,9 +24,8 @@ const NavBar = () => {
        <div className='nav-cta'>
             <Link to="/"><button>Home</button></Link>
             <Link to="/reports"><button>Reports</button></Link>
-            <Link to="/report-lost"><button>Report Lost Item</button></Link>
-            <Link to="/report-found"><button>Report Found Item</button></Link>
             <Link to="/dashboard"><button>Dashboard</button></Link>
+            <button onClick={logout}>Logout</button>
         </div>
         <div className='user'>
             <img src="" alt="" />

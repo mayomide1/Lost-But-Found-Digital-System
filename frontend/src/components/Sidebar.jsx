@@ -8,16 +8,17 @@ const Sidebar = () => {
 
     function logout(){
         localStorage.removeItem("loggedUser")
-        navigate("/login")
+        navigate("/")
     }
 
   return (
     <>
     <div className="sidebar">
-        <button>Dashboard</button>
-        <Link to="/report-lost"><button>Report Lost Items</button></Link>
-        <Link to="/report-found"><button>Report Found Items</button></Link>
-        <button>Settings</button>
+        <button onClick={() => navigate("/dashboard")}>Dashboard</button>
+        <button onClick={() => navigate("/user-reports")}>Your Reports</button>
+        <button onClick={() => navigate("/report-lost")}>Report Lost Items</button>
+        <button onClick={() => navigate("/report-found")}>Report Found Items</button>
+        <button onClick={() => navigate("/user-settings")}>Settings</button>
         <button onClick={logout}>Logout</button>
 
     </div>

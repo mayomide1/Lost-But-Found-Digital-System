@@ -1,25 +1,18 @@
 import "../css/Dashboard.css"
 import Sidebar from './Sidebar'
-import { Link } from 'react-router-dom'
+import UserNavbar from "./UserNavbar"
 
 const Dashboard = () => {
-   
-   const activeUser = (JSON.parse(localStorage.getItem("loggedUser")))
-    console.log(activeUser)
        
 
   return (
     <>
-    <div className='dashboard'>
-    <nav>
-        <Link to="/"><h1>Lost & Found</h1></Link>
-
-        <div className='user'>
-            <img src="" alt="" />
-            <h3>{activeUser.firstName}</h3>
-        </div>
-    </nav>
+    <div className="dashboard-page">
+    <UserNavbar/>
     <Sidebar />
+    <div className='dashboard'>
+        <h1>THIS IS THE DASHBOARD PAGE</h1>
+    </div>
     </div>
     </>
   )

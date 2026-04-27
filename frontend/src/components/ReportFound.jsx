@@ -17,7 +17,7 @@ const ReportFound = () => {
         <h1>Found Item Details</h1>
         <p>Item Name</p>
         <input type="text" placeholder='e.g. Black Wallet '/>
-        <p>Upload Found Item Image (Upload if Available)</p>
+        <p>Upload Found Item Image (Mandatory)</p>
         <input type="file" accept="image/*"/>
         <p>Description (colour, brand, size, markings)</p>
         <textarea type="text" placeholder='Describe the item in detail..'/>

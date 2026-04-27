@@ -23,6 +23,7 @@
 
 .hero-section .left .buttons{
     display: flex; 
+    flex-wrap: wrap;
     gap: 30px;
     padding: 0 30px;
     margin: 80px 0;
@@ -100,7 +101,6 @@
 }
 
 footer{
-    margin: 30px 0 10px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -121,3 +121,28 @@ footer button{
     border-radius: 10px;
 }
 
+@media (max-width: 768px) {
+.hero-section .right{
+    display: none;
+}
+
+.hero-section .left{
+    width: 100vw;
+}
+
+.hero-section .left h1{
+    font-size: 4rem;
+}
+
+.hero-section .left .buttons button{
+    width: 200px;
+    height: 70px;
+    font-size: 1rem;
+}
+
+footer{
+    margin: 0;
+    flex-direction: column;
+    gap: 20px;
+}
+}

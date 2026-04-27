@@ -46,3 +46,18 @@ height: 100vh;
     height: 50px;
     border-radius: 50px;
 }
+
+@media (max-width: 768px) {
+    .signup .left{
+        display: none;
+    }
+
+    .signup .right{
+        width: 100%;
+    }
+
+    .signup .right .signup-form{
+        width: 90%;
+        margin: 70px auto;
+    }
+}
