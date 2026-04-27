@@ -51,8 +51,8 @@
     border-radius: 10px;
 }
 
-.reports h1{
-    text-align: center;
+.reports .header{
+    padding: 0 50px;
 }
 
 .reports .cta{    
@@ -76,19 +76,40 @@
     flex-direction: column;
 }
 
-.how-it-works h1{
-    text-align: center;
+.how-it-works .header{
+    margin-bottom: 10px;
+    padding: 0 50px;
+}
+
+.reports .header p:nth-child(1),
+.how-it-works .header p:nth-child(1){
+    font-size: 1rem;
+}
+
+.reports .header p:nth-child(2),
+.how-it-works .header p:nth-child(2){
+    font-size: 2rem;
+}
+.reports .header p:nth-child(3),
+.how-it-works .header p:nth-child(3){
+    font-size: 1.1rem;
 }
 
 .how-it-works .cards{
     display: flex;
+    justify-content: space-evenly;
 }
 
 .how-it-works .cards .card{
     border: 1px solid black;
-    /* box-shadow: 4px 4px 4px 4px gray; */
     border-radius: 10px;
     width: 350px;
+}
+
+.how-it-works .cards .card button{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
 }
 
 .how-it-works .cards .card h2{

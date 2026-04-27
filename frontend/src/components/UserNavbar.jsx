@@ -1,6 +1,7 @@
 import React from 'react'
 import "../css/UserNavbar.css"
 import { useNavigate } from 'react-router-dom'
+import { IoNotifications } from "react-icons/io5";
 
 const UserNavbar = () => {
 
@@ -13,7 +14,7 @@ const UserNavbar = () => {
     <nav>
         <h1 onClick={() => navigate("/")}>Lost & Found</h1>
        <div className='nav-left'>
-        <p>Notification</p>
+        <p><IoNotifications style={{fontSize:"25px"}}/></p>
         <div className='user'>
             <img src="" alt="" />
             <h3>{activeUser.firstName}</h3>

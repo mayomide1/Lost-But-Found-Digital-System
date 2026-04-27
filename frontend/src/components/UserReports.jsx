@@ -6,193 +6,279 @@ import { IoCalendarNumberSharp } from "react-icons/io5";
 import { FaRegCopyright } from "react-icons/fa6";
 import { useEffect } from "react";
 import NavBar from './NavBar';
+import { GoDotFill } from "react-icons/go";
 
 import Sidebar from './Sidebar'
 import UserNavbar from './UserNavbar'
 import "../css/UserReports.css"
 
- export const items = [
+   export const items = [
         {
             itemName:"Laptop Charger",
-            category: "Lost",
+            reportType: "Lost",
             locationSeen: "Faculty of Science",
             date: "28/03/2026",
-            description: ""
+            category: "Electronics",
+            status:"Active"
         },
         {
             itemName:"Phone Charger",
-            category: "Found",
+            reportType: "Found",
             locationSeen: "Faculty of Science",
             date: "28/03/2026",
-            description: ""
+            category: "Electronics",
+            status:"Match Found"
+            
         },
         {
             itemName:"Headphone",
-            category: "Lost",
+            reportType: "Lost",
             locationSeen: "Faculty of Science",
             date: "28/03/2026",
-            description: "It is a Black laptop bag, It contains contains"
+            category: "Electronics",
+            status:"Match Found"
+            
         },
         {
             itemName:"Flash Drive",
-            category: "Found",
+            reportType: "Found",
             locationSeen: "Faculty of Science",
             date: "28/03/2026",
-            description: "It is a Black laptop bag, It contains contains"
+            category: "Electronics",
+            status:"Resolved"
+            
         },
         {
             itemName:"Black Laptop Bag",
-            category: "Lost",
+            reportType: "Lost",
             locationSeen: "Faculty of Science",
             date: "28/03/2026",
-            description: "It is a Black laptop bag, It contains contains"
+            category: "Bag",
+            status:"Resolved"
         },
         {
             itemName:"Student Id card",
-            category: "Found",
+            reportType: "Found",
             locationSeen: "Faculty of Science",
             date: "28/03/2026",
-            description: "The name on the ID Card is Ayomide Emmanuel Mamukuyomi, Matric Number: 220591184."
+            category: "ID",
+            status:"Match Found"
         },
         {
             itemName:"Laptop Bag",
-            category: "Lost",
+            reportType: "Lost",
             locationSeen: "Faculty of Science",
-            date: "28/03/2026"
+            date: "28/03/2026",
+            category: "Bag",
+            status:"Claim Pending"
         },
         {
             itemName:"Bag",
-            category: "Found",
+            reportType: "Found",
             locationSeen: "Faculty of Science",
-            date: "28/03/2026"
+            date: "28/03/2026",
+            category: "Bag",
+            status:"Resolved"
         },
         {
             itemName:"Bag",
-            category: "Lost",
+            reportType: "Lost",
             locationSeen: "Faculty of Science",
-            date: "28/03/2026"
+            date: "28/03/2026",
+            category: "Bag",
+            status:"Active"
         },
         {
             itemName:"Bag",
-            category: "Found",
+            reportType: "Found",
             locationSeen: "Faculty of Science",
-            date: "28/03/2026"
+            date: "28/03/2026",
+            category: "Bag",
+            status:"Match Found"
         },
         {
             itemName:"Phone",
-            category: "Lost",
+            reportType: "Lost",
             locationSeen: "Faculty of Science",
-            date: "28/03/2026"
+            date: "28/03/2026",
+            category: "Electronics",
+            status:"Claim Pending"
         },
         {
             itemName:"Bag",
-            category: "Found",
+            reportType: "Found",
             locationSeen: "Faculty of Science",
-            date: "28/03/2026"
+            date: "28/03/2026",
+            category: "Bag",
+            status:"Resolved"
+            
         },
         {
             itemName:"Phone Case",
-            category: "Lost",
+            reportType: "Lost",
             locationSeen: "Faculty of Science",
-            date: "28/03/2026"
+            date: "28/03/2026",
+            category: "Accessories",
+            status:"Active"
         },
         {
             itemName:"Bag",
-            category: "Found",
+            reportType: "Found",
             locationSeen: "Faculty of Science",
-            date: "28/03/2026"
+            date: "28/03/2026",
+            category: "Bag",
+            status:"Match Found"
         },
                 {
             itemName:"Id Card",
-            category: "Lost",
+            reportType: "Lost",
             locationSeen: "Faculty of Science",
-            date: "28/03/2026"
+            date: "28/03/2026",
+            category: "ID",
+            status:"Claim Pending"
         },
                 {
             itemName:"Bag",
-            category: "Found",
+            reportType: "Found",
             locationSeen: "Faculty of Science",
-            date: "28/03/2026"
+            date: "28/03/2026",
+            category: "Bag",
+            status:"Resolved"
         },
     ]
 
 const UserReports = () => {
   
-      const [filter, setFilter] = useState("All")
-      const [search, setSearch] = useState("")
-  
-      let filteredItems = [];
-      if (filter === "All"){
-          filteredItems = items;
-      } else if (filter === "Found"){
-          filteredItems = items.filter(item => item.category === "Found")
-      }else if (filter === "Lost"){
-          filteredItems = items.filter(item => item.category === "Lost")
-      }
-  
-      filteredItems = filteredItems.filter(item => item.itemName.toLowerCase().includes(search.toLowerCase()))
-  
-      useEffect(() => {
-      window.scroll({
-          top: 0,
-          left: 0,
-          behavior: 'smooth'
-      })
-      },[])
+  const [filter, setFilter] = useState("Lost")
+  const [search, setSearch] = useState("")
+  const [statusFilter, setStatusFilter] = useState("")
+  const [categoryFilter, setCategoryFilter] = useState("")
 
-  return (
+  const found = items.filter(item => item.reportType === "Found")
+  const lost = items.filter(item => item.reportType === "Lost")
+
+    let filteredItems = [];
+  if (filter === "Found"){
+    filteredItems = items.filter(item => item.reportType === "Found")
+  }else if (filter === "Lost"){
+    filteredItems = items.filter(item => item.reportType === "Lost")
+  }
+  
+  filteredItems = filteredItems.filter(item => item.itemName.toLowerCase().includes(search.toLowerCase()))
+  
+if (statusFilter) {
+  filteredItems = filteredItems.filter(item => item.status === statusFilter)
+}
+
+if (categoryFilter) {
+  filteredItems = filteredItems.filter(item => item.category === categoryFilter)
+}
+  
+return (
     <>
     <div className="user-reports-page">
         <UserNavbar />
         <Sidebar />
     <div className="user-reports">
-        <h1 className='header'>REPORTS</h1>
-                <div className="search">
-                <input type="text" placeholder='Search' onChange={(e) => setSearch(e.target.value)}/>
-                </div>
-              <div className='filter'>
-                <button onClick={() => setFilter ("All")}>All</button>
-                <button onClick={() => setFilter ("Lost")}>Lost</button>
-                <button onClick={() => setFilter ("Found")}>Found</button>
-              </div>
+        <div className='header'>
+          <h1>Your Reports</h1>
+        <p>All lost and found item reports you have submitted</p>
         
-              <div className='cards'>
-               {(filteredItems.length === 0 ) ? <p style={{color: "red"}}>No item was found</p>: filteredItems.map((item, index) =>(
-                    <ItemCard 
-                    key = {index}
-                    category={item.category}
-                    itemName = {item.itemName}
-                    locationSeen = {item.locationSeen}
-                    date = {item.date}
-                    description = {item.description}
-                    />
-                ))}
-          </div>
+        <div className='buttons'>
+          <button className={filter === "Lost" ? "active" : "non-active"}
+          onClick={() => {setFilter ("Lost")}} >Lost Items ({lost.length})</button>
+          <button className={filter === "Found" ? "active" : "non-active"}
+          onClick={() => {setFilter ("Found")}}>Found Items ({found.length})</button>
+        </div>
+        </div>
+
+        <div className="filter">
+          <input type="text" placeholder='Search by name of item' onChange={(e) => setSearch(e.target.value)}/>
+
+        <select name="" id="" onChange={(e) => setStatusFilter(e.target.value)}>
+            <option value="">All Status</option>
+            <option value="Active">Active</option>
+            <option value="Match Found">Match Found</option>
+            <option value="Claim Pending">Claim Pending</option>
+            <option value="Resolved">Resolved</option>
+        </select>
+
+        <select name="" id="" onChange={(e) => setCategoryFilter(e.target.value)}>
+          <option value="">Select Category</option>
+          <option value="Electronics">Electronics</option>
+          <option value="ID">ID</option>
+          <option value="Bag">Bag</option>
+          <option value="Documents">Documents</option>
+          <option value="Book">Book</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Others">Others</option>
+        </select>
+        </div>
+
+        <div className='lost-items'>
+        {(filteredItems.length === 0 ) ? <p style={{color: "red", textAlign:"center"}}>No item was found</p>: filteredItems.map((item, index) => (
+          <ReportItems 
+            key = {index}
+            itemName = {item.itemName}
+            reportType = {item.reportType}
+            category = {item.category}
+            locationSeen = {item.locationSeen}
+            date = {item.date}
+            status = {item.status}
+          />
+
+        ))}
+        </div>
     </div>
     </div>
     </>
   )
 }
 
-export const ItemCard = ({category,itemName, locationSeen, date, description}) => {
-    return (
-        <>
-            <div className='card'>
-            <img src="" alt="" style={{border:"2px solid red", width:"100%", height:"150px"}}/>
-            <p className='category'> <LuClock4/>{category} 3 days ago</p>
-            <p className='item-name'><strong>{itemName}</strong></p>   
-            <div className="date-location">
-            <p><MdLocationPin/>{locationSeen}</p>   
-            <p><IoCalendarNumberSharp/>{date}</p>
-            </div>
-            <p>{description}</p>
-            <div className="cta-button">
-                <button>View</button>
-                <button>Claim</button>
-             </div>
-            </div>
-        </>
-    )
+const ReportItems = ({itemName, reportType, category, locationSeen, date, status }) => {
+   return(
+    <>
+        <div className="lost-item">
+          <div className="head">
+            <h3><strong>{itemName}</strong></h3>
+            <p style={{color: "white", borderRadius: "10px", width: "100px", textAlign: "center", padding:"5px", background:(reportType === "Found")? "green" : "red"}}>{reportType}</p>
+          </div>
+          <div className='body'>
+          <p>{category}</p>
+          <GoDotFill /> 
+          <p>{locationSeen}</p>
+          <GoDotFill />
+          <p>{date}</p>
+          </div>
+          <p>65W Dell charger, black with a small yellow tape mark near the connector.</p>
+
+          <div className='bottom'>
+            <p style={{color:(status === "Active") ? "#32CD32" 
+            : (status === "Match Found") ? "blue" 
+            : (status === "Claim Pending") ? "orange" 
+            : (status === "Resolved") ? "#228B22"
+            : "gray"}}><strong>{status}</strong></p>
+
+         {(status === "Active") ? 
+            <>
+          <div className="buttons">
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+          </> : 
+          (status === "Match Found") ?
+          <>
+          <div className="buttons">
+            <button>Edit</button>
+            <button>Claim</button>
+          </div>
+          </> :
+          null}
+          </div>
+        </div>
+    </>
+   )
 }
+
 
 export default UserReports

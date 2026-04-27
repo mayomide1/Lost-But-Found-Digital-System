@@ -19,6 +19,16 @@ const ReportFound = () => {
         <input type="text" placeholder='e.g. Black Wallet '/>
         <p>Upload Found Item Image (Mandatory)</p>
         <input type="file" accept="image/*"/>
+        <select name="" id="">
+          <option value="">Select Category</option>
+          <option value="">Electronics</option>
+          <option value="">ID</option>
+          <option value="">Bag</option>
+          <option value="">Documents</option>
+          <option value="">Book</option>
+          <option value="">Accessories</option>
+          <option value="">Others</option>
+        </select>
         <p>Description (colour, brand, size, markings)</p>
         <textarea type="text" placeholder='Describe the item in detail..'/>
         <p>Date Found</p>

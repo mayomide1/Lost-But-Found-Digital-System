@@ -42,7 +42,7 @@ margin: 20px 0;
     border-radius: 10px;
 }
 
-.card .category{
+.card .status-category{
     font-weight: 600;
     display: flex;
     justify-content: flex-end;

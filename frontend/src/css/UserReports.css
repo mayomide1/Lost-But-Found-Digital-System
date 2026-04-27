@@ -8,9 +8,92 @@
     height: 99.5vh;
     margin: 70px 0 0;
     overflow-y: scroll;
+    padding: 20px;
+    padding-bottom: 100px;
 }
 
-.user-reports .cards{
-    margin-bottom: 100px;
+.user-reports .header{
+    padding: 10px;
 }
 
+.user-reports .header .buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.user-reports .header .buttons button{
+    width: 200px;
+    height: 30px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.user-reports .header .buttons button:hover{
+    border-bottom: 2px solid green;
+}
+
+.user-reports .header .buttons button.active{
+    border-bottom: 2px solid green;
+}
+.user-reports .filter input{
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+.user-reports .lost-items{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.user-reports .lost-items .lost-item{
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.user-reports .lost-items .lost-item .head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-reports .lost-items .lost-item .body{
+    display: flex;
+    justify-content: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.user-reports .lost-items .lost-item .body p{
+    display: flex;
+    align-items: center;
+}
+
+.user-reports .lost-items .lost-item .bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-reports .lost-items .lost-item .bottom .buttons{
+    width: 20%;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.user-reports .lost-items .lost-item .bottom .buttons button{
+    height: 30px;
+    width: 150px;
+    border-radius: 10px;
+}

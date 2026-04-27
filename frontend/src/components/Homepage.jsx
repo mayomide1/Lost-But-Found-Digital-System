@@ -23,9 +23,13 @@ const Homepage = () => {
       </section>
 
       <section className="reports">
-        <h1>REPORTS</h1>
+        <div className="header">
+        <p>RECENT ITEMS</p>
+        <p>Latest reports on campus</p>
+        <p>Browse recently submitted found items — one of them might be yours.</p>
+        </div>
           <div className='cards'>
-        {items.slice(0, 8).map((item, index) => (
+        {items.slice(0, 4).map((item, index) => (
             <ItemCard
                 key={index}
                 category={item.category}
@@ -37,25 +41,32 @@ const Homepage = () => {
         ))}
         </div>
         <div className="cta">
-      <Link to="/reports"><button>View More</button></Link>
+      <Link to="/reports"><button>View Recent Items</button></Link>
       </div>
       </section>
 
     <section >
       <div className='how-it-works'>
-        <h1>HOW IT WORKS</h1>
+        <div className="header">
+        <p>HOW IT WORKS</p>
+        <p>Simple, fast, transparent</p>
+        <p>Three easy steps to report or recover your item — no physical visits required.</p>
+       </div>
         <div className='cards'>
         <div className='card'>
-            <h2>1. Report Lost or Found Items</h2>
-            <p>Provide a clear description, location, date, and contact info. Attach a photo if possible. Your report will be searchable by others.</p>
+            <button>1</button>
+            <h2>Create an account</h2>
+            <p>Sign up with your name, email to get started in under a minute.</p>
         </div>
         <div className='card'>
-            <h2>2. We Find Matches</h2>
-            <p>Our system compares lost and found reports. When a potential match is found, both parties are notified via email.</p>
+          <button>2</button>
+            <h2>Submit your report</h2>
+            <p>Sign up with your LASU email and student or staff ID to get started in under a minute.</p>
         </div>
         <div className='card'>
-            <h2>3. Claim or Return Items</h2>
-            <p><strong>To claim: </strong>Verify ownership (receipt, photo, unique details). <br /> <strong>To return:</strong>Use the secure contact form to arrange pickup or shipping.</p>
+          <button>3</button>
+            <h2>Get notified instantly</h2>
+            <p>Our matching engine scans all reports automatically and emails you the moment a potential match is found.</p>
         </div>
         </div>
         </div>

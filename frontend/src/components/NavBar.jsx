@@ -23,7 +23,7 @@ const NavBar = () => {
       <>
        <div className='nav-cta'>
             <Link to="/"><button>Home</button></Link>
-            <Link to="/reports"><button>Reports</button></Link>
+            <Link to="/reports"><button>Recent Items</button></Link>
             <Link to="/dashboard"><button>Dashboard</button></Link>
             <button onClick={logout}>Logout</button>
         </div>
